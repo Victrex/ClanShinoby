@@ -1,0 +1,45 @@
+input {
+    --s: 18px; /* adjust this to control the size*/
+    
+    height: calc(var(--s) + var(--s)/5);
+    width: 50px; /* some browsers need this */
+    aspect-ratio: 2.25;
+    border-radius: var(--s);
+    margin: calc(var(--s)/2);
+    display: grid;
+    cursor: pointer;
+    background-color:#E5E6F6;
+    box-sizing: content-box;
+    overflow: hidden;
+    transition: .3s .1s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  input:before{
+    content: "";
+    padding: calc(var(--s)/10);
+    --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#496DC6 96%,#ffffff);
+    background: 
+      var(--_g) 0 /var(--_p,var(--s)) 100% no-repeat content-box,
+      var(--_g) var(--_p,0)/var(--s)  100% no-repeat content-box,
+      #fff;
+    mix-blend-mode: darken;
+    transition: .4s, background-position .4s ,
+      padding  .25s ;
+  }
+  input:checked {
+    background-color: #cdcede;
+  }
+  input:checked:before {
+    padding: calc(var(--s)/10 + .05px) calc(var(--s)/10);
+    --_p: 100%;
+    --_i: 1;
+  }
+
+
+  .switchPagos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

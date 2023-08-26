@@ -1,0 +1,205 @@
+.modalForm::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.modalForm::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.modalForm::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.modalForm::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.modalForm::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.modalForm::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+
+
+
+
+.modalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modalContent{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+.modalPopup{
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalForm{
+    position: absolute;
+    width: 550px;
+    min-height: 400px;
+    max-height: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 2px solid rgb(244, 244, 244);
+    border-radius: 5px;
+    background-color: white;
+    z-index: 999;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alumnoForm{
+    padding: 20px;
+}
+.alumnoFormLabel{
+    display: block;
+    text-align: left;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #676767f4;
+}
+
+.alumnoFormInput, .alumnoFormSelect, textarea{
+    background-color: #fff;
+    width: 100%;
+    height: 35px;
+  border: 1px solid #EFF0F6;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  outline: 1px #5663C8;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #5663C8;
+    font-size: 1rem;
+}
+textarea{
+    min-height: 100px;
+}
+.subtmitAlumno{
+    background-color: rgb(244, 177, 70);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -617px;
+    left: 35px;
+    width: 150px;
+}
+.closeIcon{
+    cursor: pointer;
+    z-index: 100;
+    margin: 14px;
+    transition: 0.3s ease-in-out;
+    color: #5663C8;
+}
+.closeIcon:hover{
+    transform: rotate(90deg);
+}
+.btns{
+    display: flex;
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.btn{
+    color: black;
+    background: none;
+    font: inherit;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.btn-primary{
+    background-color: black;
+    color: white;
+}
+.btn-primary:hover{
+    background-color: rgb(66, 66, 66);
+}
+.btn-secondary:hover{
+    background: rgb(241, 240, 240);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .modalForm{
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: scroll;
+    }
+
+    .alumnoFormLabel{
+        width: 80%;
+        display: block;
+        text-align: left;
+      margin-bottom: 5px;
+    }
+
+    .alumnoFormInput, .alumnoFormSelect, textarea{
+        width: 100%;
+        height: 35px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      outline: 1px #ccc;
+      
+    }
+    .subtmitAlumno{
+        background-color: rgb(244, 177, 70);
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        bottom: -570px;
+        left: 0px;
+        width: 150px;
+    }
+}
+
+
+.btnCancelar{
+    color: #fff;
+    background-color: #F73C65;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}

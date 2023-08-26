@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css?family=Hind:300,400&display=swap");
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+.tableContainer::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.tableContainer::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.tableContainer::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.tableContainer::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+
+.alumnosBtnsContainer{
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 5px;
+  >button{
+    background-color: #cda91c;
+    color: #fff;
+    margin: 0px 5px;
+    outline: none;
+  }
+  >button:hover{
+    background-color: #b0931d;
+  }
+}
+
+.btnDelete{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.headerAlumnos{
+  grid-area: "headerAlumnos";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.headerAlumnos h1{
+  font-size: 1.6rem;
+  color: #424E79;
+  padding: 10px;
+}
+
+.alumnosContainer {
+  display: grid;
+  grid-template:
+  "headerAlumnos" 250px
+  "tableContainer" auto
+  ;
+}
+
+.tableContainer {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 7px 10px #4354c33a;
+  max-height: max-content;
+  >table{
+    
+    width: 100%;
+    >.tHead{
+      color: #424E79;
+      >th{
+        text-align: center;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        border-top: 1px  solid #a7a7a7;
+        
+      }
+    }
+  }
+}
+
+
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #1f1f1f;
+  height: 40px;
+  >td{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    
+  }
+  >.tdAccordion{
+    color: #424E79;
+  }
+}
+
+.accordion .tHead tr{
+  border: 2px solid #b02b2b;
+}
+
+.accordion .accordion-item{
+  
+  
+  cursor: pointer;
+    
+}
+
+
+.accordion .accordion-item:hover{
+  >.tdAccordion{
+    color: #b0931d;
+  }
+  
+  cursor: pointer;
+    
+}
+.MdDelete{
+  color: #e05050;
+  text-align: center;
+}
+.MdEditNote{
+  color: #1e6422;
+}
+.accordion tr:nth-child(4n-2){
+  background-color: #a3a3a31d;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #03b5d2;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  border-bottom: 1px solid #000;
+  width: 100%;
+  left: 0;
+  min-height: 150px;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+.accordion .accordion-content h1{
+  margin: 0;
+  font-size: 1rem;
+  color: #b0931d;
+
+}
+.accordion-content{
+  background-color: #6d80831a;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  .names{
+    margin: 0;
+    color: #000;
+    >p{
+      margin: 0;
+      text-align: left;
+      color: #7288a2;
+    }
+    >span{
+      font-size: 0.85rem;
+      >b{
+        color: #7288a2;
+      }
+    }
+  }
+  .status{
+    text-align: center;
+    >span{
+      margin: 0;
+      color: #b0931d;
+      font-weight: 700;
+    }
+    >p{
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+  .dataContent{
+    color: #000;
+    >span{
+      font-size: 0.85rem;
+      >b{
+        color: #7288a2;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .names{
+    width: 100%;
+  }
+  .dataContent{
+    width: 100%;
+    >span{
+      font-size: 0.85rem;
+      >b{
+        color: #7288a2;
+      }
+    }
+  }
+
+  .accordion{
+    min-width: 550px;
+
+  }
+
+  .accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+    >td{
+      text-align: center;
+      font-size: 1rem;
+    }
+    
+  }
+  
+  .tHead{
+    >th{
+      font-size: 0.8rem;
+    }
+  }
+
+  .tableContainer{
+    width: 100vw;
+    overflow-x: auto;
+  }
+
+}
+
+
+.btnAgregarPago{
+  color: #fff;
+  background-color: #F73C65;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.PagosTitle{
+  color: #424E79;
+}
