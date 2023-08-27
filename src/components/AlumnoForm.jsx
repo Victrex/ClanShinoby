@@ -145,7 +145,7 @@ const AlumnoForm = () => {
           <OptionCinta Data={cintaData}/>
         </select>
       
-        <button className="subtmitAlumno" type="submit" onClick={() => window.location.reload()}>Enviar</button>
+        <button className="subtmitAlumno" type="submit" onClick={() => {window.location.reload()}}>Enviar</button>
         
     </form>
   </>

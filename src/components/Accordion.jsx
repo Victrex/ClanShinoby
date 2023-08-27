@@ -10,6 +10,7 @@ const Accordion = ({ crud, pay }) => {
 
 
 
+
   useEffect(() => {
     setItems(response);
   }, [response]);
