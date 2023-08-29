@@ -33,6 +33,8 @@
     >div{
         display: flex;
         gap: 20px;
+        justify-content: center;
+        align-items: center;
     }
     >div>.submitPagos{
         background-color: #4354C3;
@@ -124,4 +126,24 @@
   
   .confirm-dialog-button:hover {
     background-color: #0056b3;
+  }
+
+  #fechaPago {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  input#fechaPago[type="date"] {
+    padding: 2px;
+  }
+
+  ::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.9;
+    filter: invert(0.9);
   }

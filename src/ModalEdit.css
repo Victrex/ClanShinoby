@@ -1,0 +1,36 @@
+.btns .btnCancelar{
+    color: #fff;
+    background-color: #F73C65;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+.btns .btnCancelar:hover{
+    color: #fff;
+}
+
+.alumnoForm .subtmitAlumno{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(244, 177, 70);
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        height: 45px;
+        color: #fff;
+    }
+
+.alumnoForm .subtmitAlumno:hover{
+    color: #fff;
+    background-color: rgb(222, 161, 64);
+}

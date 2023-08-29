@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // Accordion.js
 import React, { useEffect, useState } from "react";
@@ -7,9 +8,6 @@ const Accordion = ({ crud, pay }) => {
   const [URL, setURL] = useState(import.meta.env.VITE_URLBACKEND)
   const [items, setItems] = useState([]);
   const response = (useFetch(`${URL}/alumno/`)).data
-
-
-
 
   useEffect(() => {
     setItems(response);

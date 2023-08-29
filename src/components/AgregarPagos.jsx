@@ -4,17 +4,20 @@ import "../modalPagos.css";
 import { MdClose } from "react-icons/md";
 
 const AgregarPagos = ({item}) => {
-    const [data, setData] = useState(item)
     const [showPopup, setShowPopup] = useState(false);
 
 
   const PagoForm = ({item}) => {
-    const [monto, setMonto] = useState(0); // Estado para el valor del monto
+    const [monto, setMonto] = useState(); // Estado para el valor del monto
+    const [fechaPago, setFechaPago] = useState(); // formattedDate es el valor por defecto
 
-        const handleMontoChange = (event) => {
-            setMonto(event.target.value); // Actualizar el estado con el valor del input
-        };
 
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript son base 0, por lo que se suma 1
+        const day = String(currentDate.getDate()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day}`;
 
     return(
         <div className="modalPagos">   
@@ -28,9 +31,10 @@ const AgregarPagos = ({item}) => {
                 </div>
 
             <form className="formModalPagos">
-                    <input className="inputPagos" type="number" placeholder="0 LPS" value={monto}  onChange={handleMontoChange} required />
+                    <input className="inputPagos" type="number" placeholder="0 LPS"  onChange={(e) => setMonto(e.target.value)} required />
+                    <input className="inputPagos" type="date" name="Fecha" id="fechaPago" defaultValue={formattedDate} onChange={(e) => setFechaPago(e.target.value)}/>
                     <div>
-                        <CreatePago item={item} monto={monto} />
+                        <CreatePago item={item} monto={monto} fecha={fechaPago}/>
                         <span className="btnCancelarPagos" onClick={() => {setShowPopup(false)}}> Cancelar</span>
                     </div>
             </form>
@@ -84,33 +88,26 @@ const AgregarPagos = ({item}) => {
   );
 };
 
-const CreatePago = ({item, monto}) => {
-    const [URL, setURL] = useState(import.meta.env.VITE_URLBACKEND)
-    const [responseMessage, setResponseMessage] = useState('');
-    
-    
+const CreatePago = ({item, monto, fecha}) => {
+    const [URL] = useState(import.meta.env.VITE_URLBACKEND)
+    const [setResponseMessage] = useState('');
     const handleCreatePago = async () => {
         
         const url = `${URL}/pagoMensual/save`;
-        const currentDate = new Date();
+        
 
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript son base 0, por lo que se suma 1
-    const day = String(currentDate.getDate()).padStart(2, '0');
-
-    const formattedDate = `${year}-${month}-${day}`;
+    
 
 
   
       const pagoData = {
-        fechaPago: formattedDate,
+        fechaPago: fecha,
         idAlumno: item.idAlumno,
         idMonto: 1,
         montoPagado: monto,
         montoPendiente: 0.0,
         idEstadoPago: 1
       };
-  
       try {
         const response = await fetch(url, {
           method: 'POST',
@@ -129,8 +126,8 @@ const CreatePago = ({item, monto}) => {
     };
 
     const confirmAndCreatePago = () => {
-        const confirmResult = window.confirm(`Esta seguro que desea agregar ${monto} L. a ${item.primerNombre} ${item.primerApellido}`);
 
+        const confirmResult = window.confirm(`Esta seguro que desea agregar ${monto} L. a ${item.primerNombre} ${item.primerApellido}`);
 
         if (confirmResult) {
             

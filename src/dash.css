@@ -3,7 +3,10 @@ body{
     margin: 0;
     box-sizing: border-box;
     color: #F1F6F9;
-    background-color: #F2F6F9;
+    /* background-color: #F2F6F9; */
+    background-color: #f9e5c5;
+background-image: linear-gradient(315deg, #f9e5c5 0%, #d7dff5 100%);
+
 .header{
     >.tittle>h1{
         font-size: 1.5rem;
@@ -13,7 +16,7 @@ body{
         display: flex;
         gap: 10px;
         overflow-x: auto;
-        
+        padding-bottom: 20px;
     }
     grid-area: header;
     
@@ -87,6 +90,11 @@ border: 1px solid rgba(239, 196, 98, 0.31);
     flex: 1;
     min-height: 150px;
 }
+.aside img{
+    width: 100%;
+    opacity: 0.8;
+
+}
 .main{
     flex: 3;
     background-color: #ffffff;
@@ -138,14 +146,15 @@ border: 1px solid rgba(239, 196, 98, 0.31);
     padding: 10px 15px ;
     min-width: 200px;
     width:350px;
-    height: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     >h1{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: #424E79;
         margin: 0;
+        font-weight: 300;
     }
     >h3{
         font-size: 1.1rem;
@@ -234,11 +243,14 @@ border: 1px solid rgba(239, 196, 98, 0.31);
             font-size: 1rem;
         }}
     }
+.aside img{
+    display: none;
 
+}
     
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 768px){
     .dashContent{
         display: flex;
         flex-direction: column;

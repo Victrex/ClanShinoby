@@ -3,7 +3,7 @@ import { useFetch } from "./useFetch";
 import "../historial.css";
 import "../pagosMensuales.css";
 const PagosMensuales = () => {
-    const [URL, setURL] = useState(import.meta.env.VITE_URLBACKEND)
+    const [URL] = useState(import.meta.env.VITE_URLBACKEND)
     const [items, setItems] = useState([]);
     const [itemsActual, setItemsActual] = useState([]);
     const response = (useFetch(`${URL}/pagoMensual/estado/1`)).data
@@ -59,9 +59,9 @@ const PagosMensuales = () => {
           <tbody className="historialBody">
             <tr><td colSpan={7}> <hr /> </td></tr>
            {data &&
-            data.reverse().map((item) => (
+            data.reverse().map((item, index) => (
                 
-                <React.Fragment key={item.idAlumno}>
+                <React.Fragment key={index}>
                 <tr>
                     <td className="tdAccordion" >
                         <span  className="accordion-title"> {item.idAlumno.primerNombre}</span>

@@ -105,7 +105,7 @@ textarea{
     outline: none;
     border: none;
     border-radius: 5px;
-    width: 150px;
+    width: 100%;
 }
 .closeIcon{
     cursor: pointer;
@@ -121,7 +121,6 @@ textarea{
     display: flex;
     grid-gap: 10px;
     justify-content: center;
-    margin-top: 3rem;
 }
 .btn{
     color: black;
@@ -177,7 +176,7 @@ textarea{
         outline: none;
         border: none;
         border-radius: 5px;
-        width: 150px;
+        width: 100%;
     }
 }
 

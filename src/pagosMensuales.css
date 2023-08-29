@@ -19,7 +19,7 @@ input {
   input:before{
     content: "";
     padding: calc(var(--s)/10);
-    --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#496DC6 96%,#ffffff);
+    --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#f3c11c 96%,#ffffff);
     background: 
       var(--_g) 0 /var(--_p,var(--s)) 100% no-repeat content-box,
       var(--_g) var(--_p,0)/var(--s)  100% no-repeat content-box,

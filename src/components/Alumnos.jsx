@@ -3,11 +3,12 @@ import "../alumnos.css";
 import AlumnosStats from "./AlumnosStats";
 import AlumnosBtns from "./AlumnosBtns";
 const Alumnos = () => {
+
   return (
     <div className="alumnosContainer">
       <div className="headerAlumnos">
-        <h1>Alumnos</h1>
-        <AlumnosStats/>
+        <h1 className="tituloAlumnos">Alumnos</h1>
+        <AlumnosStats />
         <AlumnosBtns/>
       </div>
 

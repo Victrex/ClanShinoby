@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "./useFetch";
-import ActiveIndexComp from "./ActiveIndexComp";
 import "../historial.css";
 
 const HistorialPagos = () =>{
-    const [URL, setURL] = useState(import.meta.env.VITE_URLBACKEND)
+    const [URL] = useState(import.meta.env.VITE_URLBACKEND)
     const [items, setItems] = useState([]);
     const response = (useFetch(`${URL}/historialPagos/getAll`)).data
     
@@ -37,8 +36,8 @@ return (
        {items &&
         items.reverse().map((item, index) => (
             
-            <React.Fragment key={`${item.idAlumno}${item.codigoAlumno}`}>
-            <tr>
+            <React.Fragment key={`${index}`}>
+            <tr >
                 <td className="tdAccordion" >
                     <span  className="accordion-title"> {item.alumno.primerNombre}</span>
                 </td>

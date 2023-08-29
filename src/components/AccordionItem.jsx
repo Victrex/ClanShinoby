@@ -6,6 +6,7 @@ import ActiveIndexComp from "./ActiveIndexComp";
 import { MdDelete, MdEditNote } from "react-icons/md";
 import { useDeleteFetch } from "./useDeleteFetch";
 import AgregarPagos from "./agregarPagos";
+import ModalEditar from "./ModalEditar";
 
 
 
@@ -43,7 +44,7 @@ const AccordionItem = ({ items, crud, pay }) => {
         {crud && !pay && (
         <>
           <td id={item.idAlumno}>
-            <MdEditNote className="MdEditNote" size={25} />
+            <ModalEditar id={item.idAlumno} item={item}/>
           </td>
           <DeleteFetch id={item.idAlumno} />
         </>

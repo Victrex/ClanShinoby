@@ -23,7 +23,7 @@ const Dash = () => {
             <PagosMensuales/>
           </div>
           <div className='aside'>
-            <p>aside</p>
+            <img src="./src/assets/img/logoShinoby.png" alt="" />
           </div>
         </div>
         </div>
