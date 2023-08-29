@@ -4,18 +4,18 @@ import { ItemNav } from "./ItemNav";
 export const NavBar = () => {
   // eslint-disable-next-line no-unused-vars
   const [Item, setItem] = useState([
-    { name: "Inicio", icon: "fa-solid fa-house", active: false, route: "./dist/" },
+    { name: "Inicio", icon: "fa-solid fa-house", active: false, route: "./" },
     {
       name: "Pagos",
       icon: "fa-solid fa-coins",
       active: false,
-      route: "./dist/Pagos",
+      route: "./Pagos",
     },
     {
       name: "Alumnos",
       icon: "fa-solid fa-users-line",
       active: false,
-      route: "./dist/Alumnos",
+      route: "./Alumnos",
     },
     
   ]);
