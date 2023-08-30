@@ -6,12 +6,16 @@ const PagosMensuales = () => {
     const [URL] = useState(import.meta.env.VITE_URLBACKEND)
     const [items, setItems] = useState([]);
     const [itemsActual, setItemsActual] = useState([]);
+    const [filtro, setFiltro] = useState([]);
+
     const response = (useFetch(`${URL}/pagoMensual/estado/1`)).data
     const responseActual = (useFetch(`${URL}/pagoMensual/estado/2`)).data
     const [isChecked, setIsChecked] = useState(false);
     var data =[]
     
-
+    const buscarFiltro = (e) => {
+        setFiltro(e.target.value);
+    }
     
     const HandleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
@@ -22,21 +26,37 @@ const PagosMensuales = () => {
       setItemsActual(responseActual);
     }, [response, responseActual]);
 
-    if (!isChecked) {
-        data = items;
+    if (!isChecked && items) {
+        const DataFiltrada = filtro === '' ? items : items.filter((item) => {
+            const codigoAlumnoMatch = item.idAlumno.codigoAlumno.includes(filtro);
+            const primerNombreMatch = item.idAlumno.primerNombre.includes(filtro);
+            const nombreApellidoMatch = `${item.idAlumno.primerNombre} ${item.idAlumno.primerApellido}`.includes(filtro);
+            
+            return codigoAlumnoMatch || primerNombreMatch || nombreApellidoMatch;
+        })
+        data = DataFiltrada;
     }
     else if (isChecked) {
-        data = itemsActual; 
+        const DataFiltradaActual = filtro === '' ? itemsActual : itemsActual.filter((item) => item.idAlumno.codigoAlumno.includes(filtro))
+        data = DataFiltradaActual; 
     }
     return (
     <>
         <div>
 
         <h2>Pagos Mensuales</h2>
-        <div className="switchPagos"> 
+        <div className="headerPagosMensuales" > 
+        <div className="switchPagos">
+
             <p>Pagados</p>
             <input type="checkbox" checked={isChecked} onChange={HandleCheckboxChange}/>
             <p>Pendientes</p>
+        </div>
+
+            <div>
+                <input type="text" name="buscar" id="buscar" placeholder="Buscar por Alumno..." onChange={buscarFiltro}/>
+                
+            </div>
         </div>
 
         </div>
