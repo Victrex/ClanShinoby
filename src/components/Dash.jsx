@@ -1,4 +1,5 @@
 import { CardEstadistica } from "./CardEstadistica";
+import { CardEstadisticaAnio } from "./CardEstadisticaAnio";
 import PagosMensuales from "./PagosMensuales";
 import HistorialPagos from "./historialPagos";
 
@@ -15,10 +16,12 @@ const Dash = () => {
             <div className='headerStats'>
               <CardEstadistica titulo={'Mes Actual'} mes={'actual'}/>
               <CardEstadistica titulo={'Mes Anterior'} mes={'anterior'}/>
+              
             </div>
           </div>
         <div className="dashContent">
           <div className='main'>
+          <CardEstadisticaAnio/>
             <HistorialPagos/>
             <PagosMensuales/>
           </div>
