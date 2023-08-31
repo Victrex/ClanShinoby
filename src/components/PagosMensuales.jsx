@@ -28,11 +28,12 @@ const PagosMensuales = () => {
 
     if (!isChecked && items) {
         const DataFiltrada = filtro === '' ? items : items.filter((item) => {
-            const codigoAlumnoMatch = item.idAlumno.codigoAlumno.includes(filtro);
             const primerNombreMatch = item.idAlumno.primerNombre.includes(filtro);
             const nombreApellidoMatch = `${item.idAlumno.primerNombre} ${item.idAlumno.primerApellido}`.includes(filtro);
             
-            return codigoAlumnoMatch || primerNombreMatch || nombreApellidoMatch;
+            const fechaMatch = item.fechaPago.includes(filtro);
+
+            return primerNombreMatch || nombreApellidoMatch || fechaMatch;
         })
         data = DataFiltrada;
     }
