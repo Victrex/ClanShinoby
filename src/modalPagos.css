@@ -62,7 +62,49 @@
         cursor: pointer;
     }
 }
+.btnActualizar{
+            color: #fff;
+        background-color: #F73C65;
+        font-size: 1rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        width: 200px;
+        height: 40px;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+        margin: 20px;
+}
 
+.submitActualizar{
+            background-color: #4354C3;
+        font-size: 1rem;
+        border-radius: 5px;
+        width: 170px;
+        height: 40px;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+}
+
+.btnCancelarActualizar{
+            color: #fff;
+        background-color: #F73C65;
+        font-size: 1rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+}
     .modalContainer{
         justify-content: center;
         outline: none;
@@ -147,3 +189,29 @@
     opacity: 0.9;
     filter: invert(0.9);
   }
+
+
+
+  #anio{
+    width: 20%;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #424E79;
+    border: 1px solid #eee;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+
+  #mesActualizar{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #424E79;
+    border: 1px solid #eee;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
