@@ -5,7 +5,8 @@ Descripcion del Proyecto
 Este es el cliente de una pequeña aplicación para el control de pagos mensuales de una academia de artes marciales 
 
 tegnologias
--React 
+
+-React ⚛️
 -React Router
 -ViteJS
 -NodeJS
