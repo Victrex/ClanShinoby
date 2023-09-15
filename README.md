@@ -39,19 +39,19 @@ capturas de pantalla
 <h1>Pagina principal</h1> 
 -Aqui apareceran los resultados de todos los pagos realizados, tanto un historial de pagos como el pago mensual realizado por alumno 
 
-![Pagina Principal 1.1](image.png)
-![Pagina Principal 1.2](image-2.png)
+![Pagina Principal 1.1](/public/capturas/image.png)
+![Pagina Principal 1.2](/public/capturas/image-2.png)
 
 
 <h1>Pagina Pagos</h1> 
 -Desde aqui se seleccionará un alumno, al cual se le agregará el monto que haya pagado en dicho momento
 
-![Pagos](image-1.png)
-![Modal Pago](image-3.png)
+![Pagos](/public/capturas/image-1.png)
+![Modal Pago](/public/capturas/image-3.png)
 
 
 <h1>Alumnos</h1> 
 -Este es un CRUD para los alumnos que tenga dicha academia
 
-![Alumnos](image-4.png)
-![Modal Formulario Alumnos](image-5.png)
+![Alumnos](/public/capturas/image-4.png)
+![Modal Formulario Alumnos](/public/capturas/image-5.png)
